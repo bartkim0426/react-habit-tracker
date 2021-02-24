@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 const SimpleHabit = (props) => {
   const [count, setCount] = useState(0);
+  const spanRef = React.useRef();
 
   const handleIncrement = () => {
     setCount(count + 1);
@@ -10,7 +11,9 @@ const SimpleHabit = (props) => {
 
   return (
     <li className="habit">
-      <span className="habit-name">Reading</span>
+      <span 
+        ref={spanRef}
+      className="habit-name">Reading</span>
       <span className="habit-count">{count}</span>
       <button
         className="habit-button habit-increase"
